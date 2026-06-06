@@ -181,20 +181,26 @@
 // //--------------------Ques 7 :  every() -----------------------
 // Intermediate :  check if all numbers are positive.
 
-let nums = [10, 20, 30, 40];
+// let nums = [10, 20, 30, 40];
 
-let allPositive = nums.every((element) => element>0)
+// let allPositive = nums.every((element) => element>0)
 
-console.log(allPositive);
+// console.log(allPositive);
 
-// Hard : Check if all students passed.
+// // Hard : Check if all students passed.
 
-let students = [
-  { name: "A", marks: 80 },
-  { name: "B", marks: 45 },
-  { name: "C", marks: 60 },
-];
+// let students = [
+//   { name: "A", marks: 80 },
+//   { name: "B", marks: 45 },
+//   { name: "C", marks: 60 },
+// ];
 
-let allPassed = students.every((element) => element.marks >= 40)
+// let allPassed = students.every((element) => element.marks >= 40)
 
-console.log(allPassed)
+// console.log(allPassed)
+
+let person = { name: "Aman", age: 25, city: "Bhopal" };
+
+for (let key in person) {
+    console.log(key, ":", person[key]);
+}
