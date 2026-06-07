@@ -259,3 +259,178 @@
 // }
 
 // console.log(obj);
+
+// ######################## 16. Frequency Counter ######################################## 
+
+// Count frequency of each character.
+
+// Input:
+// "banana"
+
+// Expected Output:
+// {
+//   b:1,
+//   a:3,
+//   n:2
+// }
+
+// let str = "banana"
+// let obj = {}
+
+// for(let s of str){
+//     // if(Object.hasOwn(obj, s)){
+//     if(obj[s]){
+//         obj[s] = obj[s] + 1;
+//     }
+//     else{
+//         obj[s] = 1;
+//     }
+// }
+
+// console.log(obj)
+
+// ######################## 17. Group By Property ######################################## 
+
+
+// Group users by age.
+
+// 1 approach
+// const users = [
+//   { name: "A", age: 20 },
+//   { name: "B", age: 21 },
+//   { name: "C", age: 20 }
+// ]
+
+// let group1 = users.filter((Element) => Element.age === 20)
+// let group2 = users.filter((Element) => Element.age === 21)
+
+// // console.log(group1);
+// // console.log(group2);
+
+// // let groupded =  {...group1,...group2}
+// let groupded = {
+//     20 : group1,
+//     21 : group2
+// }
+// console.log(groupded);
+
+// 2 Approach 
+// const users = [
+//   { name: "A", age: 20 },
+//   { name: "B", age: 21 },
+//   { name: "C", age: 20 }
+// ];
+
+// let grouped = {};
+
+// for (let user of users) {
+//   if (Object.hasOwn(grouped, user.age)) {
+//     grouped[user.age].push(user);
+//   } else {
+//     grouped[user.age] = [user];
+//   }
+// }
+
+// console.log(grouped);
+
+// ######################## 18. Deep Property Check ######################################## 
+
+// Check whether this property exists:
+
+// "user.address.city"
+
+// inside an object dynamically.
+
+// const obj = {
+//   user: {
+//     address: {
+//       city: "Bhopal"
+//     }
+//   }
+// };
+
+// const path = "user.address.city";
+
+// let keys = path.split(".");
+// let current = obj;
+
+// let exists = true;
+
+// for (let key of keys) {
+//   if (current && Object.hasOwn(current, key)) {
+//     current = current[key];
+//   } else {
+//     exists = false;
+//     break;
+//   }
+// }
+
+// console.log(exists);
+
+// current = current[key]; ---------------------------> ye 
+// 1 itration me bad 
+// const obj = {
+//   user: {
+//     address: {
+//       city: "Bhopal"
+//     }
+//   }
+// };
+// next aisa ho jayega or kam hote jayega
+// const current = {
+//     address: {
+//       city: "Bhopal"
+//     }
+// };
+
+// ######################## 19. Object Comparison ######################################## 
+
+// Check if two objects have same keys and values.
+
+// Example:
+// {a:1,b:2}
+// {a:1,b:2}
+
+// function isEqual(obj1, obj2) {
+//     let keys1 = Object.keys(obj1);
+//     let keys2 = Object.keys(obj2);
+
+//     if (keys1.length !== keys2.length) {
+//         return false;
+//     }
+
+//     for (let key of keys1) {
+//         if (obj1[key] !== obj2[key]) {
+//             return false;
+//         }
+//     }
+
+//     return true;
+// }
+
+// let obj1 = { a: 1, b: 2 };
+// let obj2 = { a: 1, b: 2 };
+
+// console.log(isEqual(obj1, obj2));
+
+// ######################### 20. Remove Duplicate Objects ######################################## 
+
+// Remove duplicate objects from array based on `id`.
+
+const arr = [
+  { id: 1, name: "A" },
+  { id: 2, name: "B" },
+  { id: 1, name: "A" }
+];
+
+let seen = {};
+let result = [];
+
+for (let user of arr) {
+  if (!seen[user.id]) {
+    seen[user.id] = true;
+    result.push(user);
+  }
+}
+
+console.log(result);
