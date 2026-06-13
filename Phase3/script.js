@@ -143,3 +143,33 @@
 
 // console.log(unique);
 
+/*Build a **Student Marks Calculator**.
+
+Input:
+[50, 60, 70, 80, 90]
+
+
+Output:
+
+Highest Marks: 90
+Lowest Marks: 50
+Average Marks: 70
+Total Marks: 350
+ */
+
+let arr = [50, 60, 70, 80, 90]
+
+let max = Math.max(...arr);
+
+let min = Math.min(...arr)
+
+let total = arr.reduce((acc,n) => acc+n,0);
+
+let average = () =>{
+  let N = arr.length;
+  return total/N;
+}
+console.log(`Highest Marks : ${max}`)
+console.log(`Lowest Mark : ${min}`)
+console.log(`Average marks : ${average()}`)
+console.log(`Total Marks : ${total}`)
